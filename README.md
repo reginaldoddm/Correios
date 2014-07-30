@@ -1,4 +1,5 @@
 correios
 ========
 
-Classe que realiza o calculo de frete junto ao webservice dos correios
+Esta classe realiza o calculo de frete de produtos no Webservice dos correios,
+com varios serviços tipo PAC, SEDEX, SEDEX 10, E-SEDEX, etc.
