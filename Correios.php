@@ -1,6 +1,6 @@
 <?php
 /**
- * Classe respons·vel por calcular frete junto ao webservice dos correios
+ * Classe respons√°vel por calcular frete junto ao webservice dos correios
  * 
  * @author Reginaldo Moreira <reginaldoddm@gmail.com>
  * @version Beta
@@ -54,8 +54,8 @@ class Correios extends CorreiosRequest{
 	
 	
 	/**
-	 * Utilizar esse mÈtodo se tiver contrato com o correios
-	 * @param string $codeEmpresa n˙mero do contrato
+	 * Utilizar esse m√©todo se tiver contrato com o correios
+	 * @param string $codeEmpresa n√∫mero do contrato
 	 * @param string $senha senha do contrato
 	 * @return void
 	 */
@@ -79,7 +79,7 @@ class Correios extends CorreiosRequest{
 	
 	/**
 	 * Adicione peso e medidos da encomenda, se os valores forem menor que
-	 * o padr„o dos correios o mÈtodo adiciona automaticamento o valor mÌnimo
+	 * o padr√£o dos correios o m√©todo adiciona automaticamento o valor m√≠nimo
 	 * requerido pelo correios
 	 * @param mixed int | double $peso
 	 * @param int $altura
@@ -98,7 +98,7 @@ class Correios extends CorreiosRequest{
 	
 	
 	/**
-	 * Adicione o serviÁo a ser consultado 
+	 * Adicione o servi√ßo a ser consultado 
 	 * @param mixed $servico array('PAC') ou com mais valores array('SEDEX', 'PAC')
 	 * @throws \InvalidArgumentException
 	 * @return void
@@ -106,11 +106,11 @@ class Correios extends CorreiosRequest{
 	public function setServicos($servico = array()){
 		
 		if(!is_array($servico)){
-			throw new \InvalidArgumentException('O mÈtodo '.__METHOD__.' requer um parametro no formato array');
+			throw new \InvalidArgumentException('O mÔøΩtodo '.__METHOD__.' requer um parametro no formato array');
 		}
 		
 		if(count($servico) <= 0){
-			throw new \InvalidArgumentException('O mÈtodo '.__METHOD__.' requer um parametro no formato array que n„o seja vazio');
+			throw new \InvalidArgumentException('O mÔøΩtodo '.__METHOD__.' requer um parametro no formato array que n√£o seja vazio');
 		}else{
 			
 			$erro = FALSE;
@@ -118,7 +118,7 @@ class Correios extends CorreiosRequest{
 				
 				if(!array_key_exists($value, $this->codServico)){
 					
-					throw new \InvalidArgumentException('ServiÁo '. $value . ' n„o est· disponÌvel');
+					throw new \InvalidArgumentException('Servi√ßo '. $value . ' n√£o est√° dispon√≠vel');
 					
 				}else{
 					$this->servicoParams[] = $this->codServico[$value];
@@ -132,9 +132,9 @@ class Correios extends CorreiosRequest{
 
 	
 	/**
-	 * MÈtodo que define a m„o prÛpria, se n„o utiliza o serviÁo de
-	 * m„o prÛpria  do correio n„o e necess·rio utilizar este mÈtodo.
-	 * @param string $string N para n„o S para sim
+	 * M√©todo que define a m√£o pr√≥pria, se n√£o utiliza o servi√ßo de
+	 * m√£o pr√≥pria  do correio n√£o e necess√°rio utilizar este m√©todo.
+	 * @param string $string N para n√£o S para sim
 	 * @return void
 	 */
 	public function setMaoPropria($string = 'N'){
@@ -143,8 +143,8 @@ class Correios extends CorreiosRequest{
 		
 
 	/**
-	 * MÈtodo que define o valor declarado, se n„o utiliza o serviÁo
-	 * do correio n„o e necess·rio utilizar este mÈtodo.
+	 * M√©todo que define o valor declarado, se n√£o utiliza o servi√ßo
+	 * do correio n√£o e necess√°rio utilizar este m√©todo.
 	 * @param int|double $valor valor
 	 * @return void
 	 */
@@ -154,9 +154,9 @@ class Correios extends CorreiosRequest{
 	
 	
 	/**
-	 * MÈtodo que define o aviso de recebimento, se n„o utiliza o serviÁo
-	 * do correio n„o e necess·rio utilizar este mÈtodo.
-	 * @param string $string N para n„o S para sim
+	 * M√©todo que define o aviso de recebimento, se n√£o utiliza o servi√ßo
+	 * do correio n√£o e necess√°rio utilizar este m√©todo.
+	 * @param string $string N para n√£o S para sim
 	 * @return boolean
 	 */
 	public function setAvisoRecebimento($string = 'N'){
@@ -165,7 +165,7 @@ class Correios extends CorreiosRequest{
 	
 	
 	/**
-	 * <b>MÈtodo que realiza consulta</b> deve ser chamado apÛs setar todos
+	 * <b>M√©todo que realiza consulta</b> deve ser chamado ap√≥s setar todos
 	 * os parametros
 	 * @return boolean
 	 */
