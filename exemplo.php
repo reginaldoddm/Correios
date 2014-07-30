@@ -40,6 +40,3 @@ try {
 	exit($e->getMessage());
 	
 }
-
-
-?>
