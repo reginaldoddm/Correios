@@ -2,7 +2,7 @@
 
 abstract class CorreiosRequest{
 	
-	//variavél que armazena serviços disponíveis
+	//variavÃ¡l que armazena serviÃ§os disponÃ­veis
 	protected  $codServico = array(
 			'SEDEX' => 40010,
 			'SEDEX_COBRAR' => 40045,
