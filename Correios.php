@@ -3,7 +3,7 @@
  * Classe responsável por calcular frete junto ao webservice dos correios
  * 
  * @author Reginaldo Moreira <reginaldoddm@gmail.com>
- * @version Beta
+ * @version 1.0
  * @access public
  * @package Correios
  * @copyright GPL General Public License 
@@ -15,8 +15,6 @@ class Correios extends CorreiosRequest{
 	private $codeEmpresa = '';
 	private $senha = '';
 	
-	private $servicoParams = array();
-	
 	private $cepOrigem;
 	private $cepDestino;
 	
@@ -27,10 +25,6 @@ class Correios extends CorreiosRequest{
 	private $altura;
 	private $largura;
 	private $diametro;
-	
-	private $maoPropria = 'N';
-	private $valorDeclarado = 0;
-	private $avisoRecebimento = 'N';
 	
 	
 	/**
@@ -98,73 +92,6 @@ class Correios extends CorreiosRequest{
 	
 	
 	/**
-	 * Adicione o serviço a ser consultado 
-	 * @param mixed $servico array('PAC') ou com mais valores array('SEDEX', 'PAC')
-	 * @throws \InvalidArgumentException
-	 * @return void
-	 */
-	public function setServicos($servico = array()){
-		
-		if(!is_array($servico)){
-			throw new \InvalidArgumentException('O método '.__METHOD__.' requer um parametro no formato array');
-		}
-		
-		if(count($servico) <= 0){
-			throw new \InvalidArgumentException('O método '.__METHOD__.' requer um parametro no formato array que não seja vazio');
-		}else{
-			
-			$erro = FALSE;
-			foreach ($servico as $value){
-				
-				if(!array_key_exists($value, $this->codServico)){
-					
-					throw new \InvalidArgumentException('Serviço '. $value . ' não está disponível');
-					
-				}else{
-					$this->servicoParams[] = $this->codServico[$value];
-				}
-				
-			}
-			
-		}
-	}
-	
-
-	
-	/**
-	 * Método que define a mão própria, se não utiliza o serviço de
-	 * mão própria  do correio não e necessário utilizar este método.
-	 * @param string $string N para não S para sim
-	 * @return void
-	 */
-	public function setMaoPropria($string = 'N'){
-		$this->maoPropria = $string;
-	}	
-		
-
-	/**
-	 * Método que define o valor declarado, se não utiliza o serviço
-	 * do correio não e necessário utilizar este método.
-	 * @param int|double $valor valor
-	 * @return void
-	 */
-	public function setValorDeclarado($valor = 0){
-		$this->valorDeclarado = number_format(str_replace(',','.', $valor), 2, '.', ',');
-	}
-	
-	
-	/**
-	 * Método que define o aviso de recebimento, se não utiliza o serviço
-	 * do correio não e necessário utilizar este método.
-	 * @param string $string N para não S para sim
-	 * @return boolean
-	 */
-	public function setAvisoRecebimento($string = 'N'){
-		$this->avisoRecebimento = $string;
-	}
-	
-	
-	/**
 	 * <b>Método que realiza consulta</b> deve ser chamado após setar todos
 	 * os parametros
 	 * @return boolean
@@ -195,6 +122,7 @@ class Correios extends CorreiosRequest{
 	
 		
 		//Submit Request cUrl
-		$this->request($params);
+		return ($this->request($params)) ? TRUE : FALSE;
+			
 	}
 }
