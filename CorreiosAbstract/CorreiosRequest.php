@@ -1,19 +1,10 @@
 <?php
 
-abstract class CorreiosRequest{
-	
-	//variavál que armazena serviços disponíveis
-	protected  $codServico = array(
-			'SEDEX' => 40010,
-			'SEDEX_COBRAR' => 40045,
-			'SEDEX_10' => 40215,
-			'SEDEX_HOJE' => 40290,
-			'PAC' => 41106,
-			'E_SEDEX' => 81019,
-	);
+require_once 'CorreiosAbstract/CorreiosServices.php';
+abstract class CorreiosRequest extends CorreiosService{
+
 	
 	private $webServiceUrl = 'http://ws.correios.com.br//calculador/CalcPrecoPrazo.asmx/CalcPrecoPrazo';
-	
 	protected $urlParams = '';
 	
 	

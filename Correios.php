@@ -5,7 +5,7 @@
  * @author Reginaldo Moreira <reginaldoddm@gmail.com>
  * @version Beta
  * @access public
- * @package Frete
+ * @package Correios
  * @copyright GPL General Public License 
  */
 require_once 'CorreiosAbstract/CorreiosRequest.php';
