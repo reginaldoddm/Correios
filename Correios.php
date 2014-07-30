@@ -106,11 +106,11 @@ class Correios extends CorreiosRequest{
 	public function setServicos($servico = array()){
 		
 		if(!is_array($servico)){
-			throw new \InvalidArgumentException('O m�todo '.__METHOD__.' requer um parametro no formato array');
+			throw new \InvalidArgumentException('O método '.__METHOD__.' requer um parametro no formato array');
 		}
 		
 		if(count($servico) <= 0){
-			throw new \InvalidArgumentException('O m�todo '.__METHOD__.' requer um parametro no formato array que não seja vazio');
+			throw new \InvalidArgumentException('O método '.__METHOD__.' requer um parametro no formato array que não seja vazio');
 		}else{
 			
 			$erro = FALSE;
