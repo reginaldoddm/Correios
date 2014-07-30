@@ -1,6 +1,6 @@
 <?php
 
-abstract class CurlRequest{
+abstract class CorreiosRequest{
 	
 	//variavél que armazena serviços disponíveis
 	protected  $codServico = array(

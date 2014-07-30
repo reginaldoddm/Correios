@@ -8,9 +8,9 @@
  * @package Frete
  * @copyright GPL General Public License 
  */
-require_once 'CurlRequest.php';
+require_once 'CorreiosAbstract/CorreiosRequest.php';
 
-class Correios extends CurlRequest{
+class Correios extends CorreiosRequest{
 	
 	private $codeEmpresa = '';
 	private $senha = '';
