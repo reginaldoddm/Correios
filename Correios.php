@@ -13,7 +13,7 @@ require_once 'CorreiosAbstract/CorreiosRequest.php';
 class Correios extends CorreiosRequest
 {
 	
-	private $codeEmpresa = '';
+    private $codeEmpresa = '';
 	private $senha = '';
 	
 	private $cepOrigem;
