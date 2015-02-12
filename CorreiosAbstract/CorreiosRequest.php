@@ -7,7 +7,7 @@
  * @package Correios
  * @copyright GPL General Public License 
  */
-require_once 'CorreiosAbstract/CorreiosServices.php';
+require_once 'CorreiosServices.php';
 
 abstract class CorreiosRequest extends CorreiosService
 {
