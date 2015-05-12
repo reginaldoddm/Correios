@@ -4,6 +4,11 @@ namespace Correios;
 
 class GetAddress
 {
+    /**
+     * Busca endereço via cep
+     * @param  string $zipCode código posta 
+     * @return array
+     */
     public function __construct($zipCode)
     {
         if (empty($zipCode)) {
