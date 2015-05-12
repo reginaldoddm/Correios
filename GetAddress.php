@@ -10,7 +10,7 @@ class GetAddress
     /**
      * Busca endereço via cep
      * @param  string $zipCode código posta 
-     * @return array
+     * @return string Json encode
      */
     public function __construct($zipCode)
     {
