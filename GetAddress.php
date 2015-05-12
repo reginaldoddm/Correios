@@ -4,6 +4,9 @@ namespace Correios;
 
 class GetAddress
 {
+    
+    private $response;
+    
     /**
      * Busca endereço via cep
      * @param  string $zipCode código posta 
@@ -15,7 +18,7 @@ class GetAddress
             throw new \InvalidArgumentException('zipCode can not be empty');
         }
 
-        $getAddress = new SoapClient(null, 
+        $getAddress = new \SoapClient(null, 
             array(
                 'location' => 'http://service.bravoswebdesign.com.br/service.php',
                 'uri' => 'http://service.bravoswebdesign.com.br/',
@@ -24,6 +27,14 @@ class GetAddress
             )
         );
         
-        return json_decode($getAddress->getAddress(array('cep' => $zipCode)));
+        $response = $getAddress->getAddress(array('cep' => $zipCode));
+        
+        $this->response = (! empty($response)) ? $response : '';
+    }
+    
+    
+    public function __toString()
+    {
+        return $this->response;
     }
 }
