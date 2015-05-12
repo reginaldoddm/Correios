@@ -4,7 +4,6 @@ namespace Correios;
 
 class GetAddress
 {
-    
     private $response;
     
     /**
@@ -31,7 +30,6 @@ class GetAddress
         
         $this->response = (string)$response;
     }
-    
     
     public function __toString()
     {
