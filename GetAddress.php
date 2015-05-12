@@ -9,7 +9,7 @@ class GetAddress
     
     /**
      * Busca endereço via cep
-     * @param  string $zipCode código posta 
+     * @param  string $zipCode código postal
      * @return string Json encode
      */
     public function __construct($zipCode)
