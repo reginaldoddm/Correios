@@ -2,7 +2,7 @@
 
 namespace Correios;
 
-class ContentPackage
+class Package
 {
 
     private $format = 1;
