@@ -29,7 +29,7 @@ class GetAddress
         
         $response = $getAddress->getAddress(array('cep' => $zipCode));
         
-        $this->response = (! empty($response)) ? $response : '';
+        $this->response = (string)$response;
     }
     
     
