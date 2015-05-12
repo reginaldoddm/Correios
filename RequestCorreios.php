@@ -3,10 +3,10 @@
 namespace Correios;
 
 
-class XMLCorreios {
+class RequestCorreios {
 
     public function __construct(Correios $correios, Package $package)
     {
-        
+
     }
 }
