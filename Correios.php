@@ -205,4 +205,15 @@ class Correios
         return $this;
     }
 
+    /**
+     * Retorna array com todos serviços de entrega
+     * @return array
+     */
+    public function getCodesService()
+    {
+        return $this->codesService;
+    }
+
+
+
 }
