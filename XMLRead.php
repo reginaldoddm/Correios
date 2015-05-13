@@ -26,9 +26,11 @@ class XMLRead {
             $i = 0;
             foreach ($xml->Servicos->cServico as $key => $value) {
 
+                $services = $correios->getCodesService();
+
                 $result[$i] = [
                     'codigo' => (string) $value->Codigo,
-                    'servico' => (string) $this->codServico["$correios->getCodesService()"],
+                    'servico' => (string) $services["$value->Codigo"],
                     'valor' => (string) $value->Valor,
                     'prazoEntrega' => (string) $value->PrazoEntrega,
                     'valorMaoPropria' => (string) $value->ValorMaoPropria,
