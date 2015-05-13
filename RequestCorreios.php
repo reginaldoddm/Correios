@@ -28,7 +28,8 @@ class RequestCorreios {
             'nVlDiametro'         => $package->getDiameter(),
             'sCdMaoPropria'       => $correios->getProperHand(),
             'nVlValorDeclarado'   => $correios->getDeclaredValue(),
-            'sCdAvisoRecebimento' => $correios->getReceivingNotice()
+            'sCdAvisoRecebimento' => $correios->getReceivingNotice(),
+            'nCdServico'          => $correios->getCodeService()
         ];
 
         $url = $this->urlCalculateShipping . '?'.http_build_query($params);
@@ -50,7 +51,4 @@ class RequestCorreios {
 
         return $result;
     }
-
-
-
 }
