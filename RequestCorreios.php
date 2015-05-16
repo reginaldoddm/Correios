@@ -24,7 +24,7 @@ class RequestCorreios {
             'nCdFormato'          => $package->getFormat(),
             'nVlComprimento'      => $package->getLength(),
             'nVlAltura'           => $package->getHeight(),
-            'nVlLargura'          => $package->getWeight(),
+            'nVlLargura'          => $package->getWidth(),
             'nVlDiametro'         => $package->getDiameter(),
             'sCdMaoPropria'       => $correios->getProperHand(),
             'nVlValorDeclarado'   => $correios->getDeclaredValue(),

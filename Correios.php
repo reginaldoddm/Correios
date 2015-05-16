@@ -14,8 +14,8 @@ namespace Correios;
 
 class Correios
 {
-    private $codeBusiness;
-    private $password;
+    private $codeBusiness = '';
+    private $password = '';
 
     private $zipCodeSource;
     private $zipCodeDestination;
@@ -42,7 +42,7 @@ class Correios
      */
     public function setCodeService($codeService)
     {
-        if (! array_key_exists($this->codesService, $codeService)) {
+        if (! array_key_exists($codeService, $this->codesService)) {
             throw new \InvalidArgumentException('this service $codeService not available');
         }
 
@@ -143,7 +143,7 @@ class Correios
             throw new \InvalidArgumentException('zipCodeSource can not be empty');
         }
 
-        $this->zipCodeSource = preg_repace('/[^0-9]/', null, $zipCodeSource);
+        $this->zipCodeSource = preg_replace('/[^0-9]/', null, $zipCodeSource);
         return $this;
     }
 
@@ -161,11 +161,11 @@ class Correios
      */
     public function setZipCodeDestination($zipCodeDestination)
     {
-        if (empty($zipCodeSource)) {
+        if (empty($zipCodeDestination)) {
             throw new \InvalidArgumentException('zipCodeDestination can not be empty');
         }
 
-        $this->zipCodeDestination = preg_repace('/[^0-9]/', null, $zipCodeDestination);
+        $this->zipCodeDestination = preg_replace('/[^0-9]/', null, $zipCodeDestination);
         return $this;
     }
 
