@@ -1,4 +1,0 @@
-<?php
-/**
- * Arquivo de exemplo
- */
