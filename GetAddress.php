@@ -27,11 +27,10 @@ class GetAddress
         );
         
         $response = $getAddress->getAddress(array('cep' => $zipCode));
-        
         $this->response = (string)$response;
     }
     
-    public function __toString()
+    public function getResponse()
     {
         return $this->response;
     }
