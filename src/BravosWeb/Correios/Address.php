@@ -5,6 +5,13 @@ namespace BravosWeb\Correios;
 class Address
 {
     private $response;
+    private $soap;
+
+
+    public function __construct(ConnectSoap $soapBWD)
+    {
+        $this->soap = $soapBWD;
+    }
     
     /**
      * Busca endereço via cep
@@ -17,16 +24,9 @@ class Address
             throw new \InvalidArgumentException('zipCode can not be empty');
         }
 
-        $getAddress = new \SoapClient(null, 
-            array(
-                'location' => 'http://service.bravoswebdesign.com.br/service.php',
-                'uri' => 'http://service.bravoswebdesign.com.br/',
-                'trace' => 0,
-                'encoding' => 'UTF-8'
-            )
-        );
+        $soap = $this->soap;
         
-        $response = $getAddress->getAddress(array('cep' => $zipCode));
+        $response = $soap->getAddress(array('cep' => $zipCode));
         
         $this->response = (string)$response;
     }
