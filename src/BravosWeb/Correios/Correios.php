@@ -9,7 +9,7 @@
  * @copyrighttt GPL General Public License
  */
 
-namespace Correios;
+namespace BravosWeb\Correios;
 
 
 class Correios
