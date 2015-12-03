@@ -8,9 +8,9 @@ class Address
     private $soap;
 
 
-    public function __construct(ConnectSoap $soapBWD)
+    public function __construct(ConnectSoap $connectSoap)
     {
-        $this->soap = $soapBWD;
+        $this->soap = $connectSoap;
     }
     
     /**
