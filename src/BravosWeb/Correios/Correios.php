@@ -43,7 +43,7 @@ class Correios
     public function setCodeService($codeService)
     {
         if (! array_key_exists($codeService, $this->codesService)) {
-            throw new \InvalidArgumentException('this service $codeService not available');
+            throw new \InvalidArgumentException("this service $codeService not available");
         }
 
         $this->codeService = $codeService;
