@@ -2,7 +2,7 @@
 
 namespace BravosWeb\Correios;
 
-class GetAddress
+class Address
 {
     private $response;
     
@@ -11,7 +11,7 @@ class GetAddress
      * @param  string $zipCode código postal
      * @return string Json encode
      */
-    public function __construct($zipCode)
+    public function getAddressByZipcode($zipCode)
     {
         if (empty($zipCode)) {
             throw new \InvalidArgumentException('zipCode can not be empty');
